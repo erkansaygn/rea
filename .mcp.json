@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "rea": {
-      "command": "node",
-      "args": ["${CLAUDE_PROJECT_DIR:-.}/scripts/rea.mjs", "mcp"]
+      "command": "bash",
+      "args": ["${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/rea-mcp.sh"]
     }
   }
 }

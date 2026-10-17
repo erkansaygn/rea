@@ -1,4 +1,7 @@
 {
+  "env": {
+    "MCP_TIMEOUT": "600000"
+  },
   "enabledMcpjsonServers": ["rea"],
   "hooks": {
     "SessionStart": [

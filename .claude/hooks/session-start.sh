@@ -7,12 +7,4 @@ if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0
 fi
 
-cd "${CLAUDE_PROJECT_DIR:-$(dirname "$0")/../..}"
-
-# Install locked dependencies once; the cached container keeps node_modules.
-if [ ! -d node_modules ]; then
-  npm ci --no-audit --no-fund
-fi
-
-# Turbo-cached build of the runtime and packaged skill used by `rea mcp`.
-npm run build:cached
+exec "$(dirname "$0")/ensure-rea-build.sh" --always
